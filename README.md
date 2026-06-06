@@ -4,54 +4,27 @@
 
 ## 功能
 
-- 浏览本机 `.codex/sessions` 会话目录。
-- 修复单个会话文件或会话目录索引。
-- 导入会话并自动修复。
-- 导入时如果会话 ID 重复，会弹窗选择“替换”或“增量”。
-- “替换”会使用导入会话覆盖本机同 ID 会话。
-- “增量”会保留原会话，并给导入会话生成新 ID，列表中会出现两个内容相同但 ID 不同的会话。
-- 导出全部会话或选中的会话。
-- 提供日志面板显示操作结果。
+- 浏览本地 Codex 会话目录
+- 显示会话名称和会话 ID
+- 修复单个会话文件或整个会话目录
+- 导入会话并自动修复索引
+- 导出全部会话或选中的会话
+- 导入时检测重复会话 ID
+- 重复 ID 可选择“替换”或“增量”
+- “替换”：用导入会话覆盖本机同 ID 会话
+- “增量”：保留原会话，并为导入会话生成新 ID，让两个内容相同但 ID 不同的会话同时存在
+- 日志面板显示导入、导出、修复过程
 
-## 环境
+## 适用场景
 
-- Windows
-- Python 3.11 或更高版本
-- Pillow
-- PyInstaller
+- Codex 会话文件存在，但会话列表中无法显示
+- 手动复制会话文件后需要重新建立索引
+- 需要备份、迁移或同步 Codex 历史会话
+- 导入他人或其他设备的会话时，想避免覆盖已有同 ID 会话
 
-## 安装依赖
+## 技术说明
 
-```powershell
-pip install -r requirements.txt
-```
-
-## 运行源码
-
-```powershell
-python session_repair_tool.py
-```
-
-## 打包 exe
-
-```powershell
-pyinstaller --clean --noconfirm CodexSessionRepair.spec
-```
-
-打包完成后，程序位于：
-
-```text
-dist\codex会话同步工具.exe
-```
-
-## 资源文件
-
-程序依赖 `assets` 目录中的背景图和图标文件：
-
-- `assets/halo_background.png`
-- `assets/CodexSessionRepair.ico`
-- `assets/CodexSessionRepair-icon.png`
-
-## 说明
+本项目使用 Python 开发，图形界面基于 Tkinter，图片资源处理使用 Pillow，Windows 可执行文件通过 PyInstaller 打包
 
 本软件纯免费，发现收费立即举报。
+<img width="1182" height="852" alt="QQ20260606-094843" src="https://github.com/user-attachments/assets/f0a6a324-18da-4efc-b51f-e4712d6d4b22" />
